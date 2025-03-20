@@ -80,13 +80,13 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
-        h1 {
+        .teste {
             font-size: 30px;
             margin-bottom: 20px;
             text-transform: uppercase;
         }
         
-        h2 {
+        .teste1 {
             font-size: 24px;
             margin-bottom: 15px;
             position: relative;
@@ -94,7 +94,7 @@
             text-transform: uppercase;
         }
         
-        h2:after {
+        .teste1:after {
             content: '';
             position: absolute;
             left: 0;
@@ -109,7 +109,7 @@
             margin-bottom: 15px;
         }
         
-        .btn {
+        .btn2 {
             display: inline-block;
             background-color: #2883c5;
             color: white;
@@ -122,7 +122,7 @@
             transition: background-color 0.3s;
         }
         
-        .btn:hover {
+        .btn2:hover {
             background-color: #1c65a0;
         }
         
@@ -232,15 +232,9 @@
             color: #666;
             font-size: 14px;
         }
+       
         
-        footer {
-            background-color: #0e1e40;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        .container {
+        .container2 {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
@@ -248,21 +242,10 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">TechSupport</div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Quem Somos</a></li>
-                <li><a href="#">Serviços</a></li>
-                <li><a href="#">Atendimentos</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+   
     
-    <section class="hero">
-        <div class="container">
+    <section class="hero2">
+        <div class="container2">
             <h1>SOBRE NÓS</h1>
             <p>Conheça nossa história, valores e a equipe que faz da TechSupport a melhor escolha em suporte técnico</p>
         </div>
@@ -270,11 +253,11 @@
     
     <section class="sobre-nos-principal">
         <div class="sobre-nos-texto">
-            <h2>NOSSA HISTÓRIA</h2>
+            <h2 class="teste1">NOSSA HISTÓRIA</h2>
             <p>A TechSupport nasceu da paixão por tecnologia e da vontade de oferecer soluções de qualidade. Fundada em 2010, nossa empresa começou como uma pequena assistência técnica e hoje se tornou referência em suporte para dispositivos Apple, upgrades de sistema e recuperação de dados.</p>
             <p>Ao longo desses anos, investimos constantemente em treinamento e equipamentos de última geração para garantir o melhor serviço aos nossos clientes. Nossa equipe é formada por profissionais certificados e apaixonados por tecnologia, sempre prontos para resolver qualquer problema com eficiência e agilidade.</p>
             <p>Com mais de 15.000 atendimentos realizados e um índice de satisfação superior a 98%, temos orgulho de ser a empresa mais confiável do mercado quando o assunto é suporte técnico especializado.</p>
-            <a href="#" class="btn">SAIBA MAIS</a>
+            <a href="#" class="btn2">SAIBA MAIS</a>
         </div>
         <div class="sobre-nos-imagem">
             <img src="/api/placeholder/500/350" alt="Equipe TechSupport">
@@ -284,7 +267,7 @@
     <section class="valores">
         <div class="valores-container">
             <div class="valores-titulo">
-                <h2>NOSSOS VALORES</h2>
+                <h2 class="teste1">NOSSOS VALORES</h2>
             </div>
             <div class="valores-cards">
                 <div class="valor-card">
@@ -324,7 +307,7 @@
     <section class="equipe">
         <div class="equipe-container">
             <div class="equipe-titulo">
-                <h2>NOSSA EQUIPE</h2>
+                <h2 class="teste1">NOSSA EQUIPE</h2>
             </div>
             <div class="equipe-membros">
                 <div class="membro">
@@ -350,11 +333,8 @@
             </div>
         </div>
     </section>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 TechSupport - O suporte que você precisa</p>
-        </div>
-    </footer>
+  
+    <%- include ('partials/footer.ejs') %>
+
 </body>
 </html>

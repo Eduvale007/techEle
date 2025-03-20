@@ -1,32 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <!-- Importando a biblioteca AOS CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <title>Document</title>
-</head>
+<%- include ('partials/header.ejs') %>
+
+
 <body>
         <!-- Header -->
-        <header>
-            <div class="container header-container">
-                <div class="logo">Tech<span class="blue-highlight">Support</span></div>
-                <ul class="nav-menu">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="sobre">Sobre Nós</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="atendimento">Atendimento</a></li>
-                    <li><a href="contato">Contato</a></li>
-                </ul>
-                <div class="contact-info">
-                    <span>(21) 3355-0000</span>
-                    <div class="search-icon">🔍</div>
-                </div>
-            </div>
-        </header>
-    
+         <%- include ('partials/navbar.ejs') %>
+      
+
         <!-- Hero Section -->
         <section class="hero" id="home">
             <div class="container hero-content">
@@ -226,64 +205,4 @@
         </section>
     
         <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div data-aos="fade-up" data-aos-delay="100">
-                        <div class="footer-logo">
-                            <div class="logo">Tech<span class="blue-highlight">Support</span></div>
-                        </div>
-                        <p>Assistência técnica especializada em produtos Apple. Oferecemos soluções rápidas e eficientes para seus dispositivos.</p>
-                        <div class="footer-contact">
-                            <p><i>📱</i> (21) 3355-0000</p>
-                            <p><i>✉️</i> contato@techsupport.com.br</p>
-                            <p><i>📍</i> Av. Rio Branco, 123 - Centro, Rio de Janeiro - RJ</p>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-nav" data-aos="fade-up" data-aos-delay="200">
-                        <h4>Links Úteis</h4>
-                        <ul class="footer-links">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#sobre">Sobre Nós</a></li>
-                            <li><a href="#servicos">Serviços</a></li>
-                            <li><a href="#contato">Contato</a></li>
-                            <li><a href="#">Política de Privacidade</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-social" data-aos="fade-up" data-aos-delay="300">
-                        <h4>Nossas Redes</h4>
-                        <p>Siga-nos nas redes sociais e fique por dentro das novidades.</p>
-                        <div class="footer-social-icons">
-                            <a href="#" class="social-icon">📘</a>
-                            <a href="#" class="social-icon">📸</a>
-                            <a href="#" class="social-icon">🐦</a>
-                            <a href="#" class="social-icon">💼</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="copyright">
-                    <p>&copy; 2025 TechSupport - Todos os direitos reservados</p>
-                </div>
-            </div>
-        </footer>
-
-<!-- Importando a biblioteca AOS JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<!-- Script para inicializar a biblioteca AOS -->
-<script>
-    // Inicializa AOS com as configurações padrão
-    AOS.init({
-        once: true, // Se true, as animações ocorrem apenas uma vez
-        offset: 120, // Distância para a animação começar
-        duration: 800, // Duração padrão para as animações
-        easing: 'ease-in-out', // Tipo de easing
-        mirror: false // Se true, elementos animam de saída quando rolados para fora da visualização
-    });
-</script>
-
-</body>
-<script src="script.js"></script>
-</html>
+        <%- include ('partials/footer.ejs') %>
