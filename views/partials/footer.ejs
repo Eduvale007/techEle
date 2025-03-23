@@ -1,3 +1,4 @@
+
 <footer>
     <div class="container">
         <div class="footer-content">
@@ -55,7 +56,21 @@ easing: 'ease-in-out', // Tipo de easing
 mirror: false // Se true, elementos animam de saída quando rolados para fora da visualização
 });
 </script>
-
+<script>
+    document.getElementById('orcamento-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Verificar se pelo menos um serviço foi selecionado
+        const checkboxes = document.querySelectorAll('input[name="servicos[]"]:checked');
+        if (checkboxes.length === 0) {
+            alert('Por favor, selecione pelo menos um serviço desejado.');
+            return;
+        }
+        
+        alert('Orçamento solicitado com sucesso! Entraremos em contato em breve.');
+        this.reset();
+    });
+</script>
 </body>
 <script src="script.js"></script>
 </html>

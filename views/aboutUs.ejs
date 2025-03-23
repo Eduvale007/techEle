@@ -1,304 +1,62 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechSupport - Sobre Nós</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-        }
-        
-        header {
-            background-color: #0e1e40;
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            color: white;
-            font-weight: bold;
-            margin-left: 20px;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            margin-right: 20px;
-        }
-        
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-        
-        .hero {
-            background-color: #0e1e40;
-            color: white;
-            padding: 50px 0;
-            text-align: center;
-        }
-        
-        .sobre-nos-principal {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .sobre-nos-texto {
-            flex: 1;
-            padding-right: 40px;
-        }
-        
-        .sobre-nos-imagem {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .sobre-nos-imagem img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        .teste {
-            font-size: 30px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-        
-        .teste1 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            position: relative;
-            padding-bottom: 10px;
-            text-transform: uppercase;
-        }
-        
-        .teste1:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 60px;
-            height: 3px;
-            background-color: #2883c5;
-        }
-        
-        p {
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .btn2 {
-            display: inline-block;
-            background-color: #2883c5;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 14px;
-            transition: background-color 0.3s;
-        }
-        
-        .btn2:hover {
-            background-color: #1c65a0;
-        }
-        
-        .valores {
-            background-color: #f0f5fa;
-            padding: 60px 0;
-        }
-        
-        .valores-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .valores-titulo {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .valores-titulo h2 {
-            display: inline-block;
-        }
-        
-        .valores-titulo h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .valores-cards {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        
-        .valor-card {
-            flex-basis: 30%;
-            background-color: white;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .valor-card i {
-            font-size: 40px;
-            color: #2883c5;
-            margin-bottom: 20px;
-        }
-        
-        .valor-card h3 {
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-        
-        .equipe {
-            padding: 60px 0;
-        }
-        
-        .equipe-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .equipe-titulo {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .equipe-titulo h2 {
-            display: inline-block;
-        }
-        
-        .equipe-titulo h2:after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .equipe-membros {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .membro {
-            flex-basis: 23%;
-            margin: 0 1% 30px;
-            text-align: center;
-        }
-        
-        .membro img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #2883c5;
-        }
-        
-        .membro h3 {
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-        
-        .membro p {
-            color: #666;
-            font-size: 14px;
-        }
-       
-        
-        .container2 {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-    </style>
-</head>
+<%- include ('partials/header.ejs') %>-
 <body>
-   
-    
-    <section class="hero2">
-        <div class="container2">
-            <h1>SOBRE NÓS</h1>
-            <p>Conheça nossa história, valores e a equipe que faz da TechSupport a melhor escolha em suporte técnico</p>
+    <!-- navbar -->
+    <%- include ('partials/navbar.ejs') %>-
+    <section class="hero">
+        <div class="container">
+            <h1 data-aos="fade-up" data-aos-duration="1200">SOBRE NÓS</h1>
+            <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200">Conheça nossa história, valores e a equipe que faz da TechSupport a melhor escolha em suporte técnico</p>
         </div>
     </section>
     
     <section class="sobre-nos-principal">
         <div class="sobre-nos-texto">
-            <h2 class="teste1">NOSSA HISTÓRIA</h2>
-            <p>A TechSupport nasceu da paixão por tecnologia e da vontade de oferecer soluções de qualidade. Fundada em 2010, nossa empresa começou como uma pequena assistência técnica e hoje se tornou referência em suporte para dispositivos Apple, upgrades de sistema e recuperação de dados.</p>
-            <p>Ao longo desses anos, investimos constantemente em treinamento e equipamentos de última geração para garantir o melhor serviço aos nossos clientes. Nossa equipe é formada por profissionais certificados e apaixonados por tecnologia, sempre prontos para resolver qualquer problema com eficiência e agilidade.</p>
-            <p>Com mais de 15.000 atendimentos realizados e um índice de satisfação superior a 98%, temos orgulho de ser a empresa mais confiável do mercado quando o assunto é suporte técnico especializado.</p>
-            <a href="#" class="btn2">SAIBA MAIS</a>
+            <h2 data-aos="fade-right" data-aos-duration="1000">NOSSA HISTÓRIA</h2>
+            <p data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000">A TechSupport nasceu da paixão por tecnologia e da vontade de oferecer soluções de qualidade. Fundada em 2010, nossa empresa começou como uma pequena assistência técnica e hoje se tornou referência em suporte para dispositivos Apple, upgrades de sistema e recuperação de dados.</p>
+            <p data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">Ao longo desses anos, investimos constantemente em treinamento e equipamentos de última geração para garantir o melhor serviço aos nossos clientes. Nossa equipe é formada por profissionais certificados e apaixonados por tecnologia, sempre prontos para resolver qualquer problema com eficiência e agilidade.</p>
+            <p data-aos="fade-right" data-aos-delay="400" data-aos-duration="1000">Com mais de 15.000 atendimentos realizados e um índice de satisfação superior a 98%, temos orgulho de ser a empresa mais confiável do mercado quando o assunto é suporte técnico especializado.</p>
+            <a href="#" class="btn" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000">SAIBA MAIS</a>
         </div>
-        <div class="sobre-nos-imagem">
-            <img src="/api/placeholder/500/350" alt="Equipe TechSupport">
+        <div class="sobre-nos-imagem" data-aos="fade-left" data-aos-duration="1200" data-aos-offset="300">
+            <img src="/assets/teamwork.png" alt="Equipe TechSupport">
         </div>
     </section>
     
     <section class="valores">
         <div class="valores-container">
             <div class="valores-titulo">
-                <h2 class="teste1">NOSSOS VALORES</h2>
+                <h2 data-aos="fade-down" data-aos-duration="1000">NOSSOS VALORES</h2>
             </div>
             <div class="valores-cards">
-                <div class="valor-card">
-                    <i>★</i>
-                    <h3>Excelência</h3>
-                    <p>Buscamos a perfeição em cada serviço realizado, garantindo que cada cliente receba o melhor atendimento possível.</p>
+                <div class="valor-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100">
+                    <i data-aos="zoom-in" data-aos-delay="600">★</i>
+                    <h3 data-aos="fade-up" data-aos-delay="700">Excelência</h3>
+                    <p data-aos="fade-up" data-aos-delay="800">Buscamos a perfeição em cada serviço realizado, garantindo que cada cliente receba o melhor atendimento possível.</p>
                 </div>
-                <div class="valor-card">
-                    <i>♥</i>
-                    <h3>Compromisso</h3>
-                    <p>Cumprimos o que prometemos, respeitando prazos e oferecendo soluções reais para os problemas de nossos clientes.</p>
+                <div class="valor-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200">
+                    <i data-aos="zoom-in" data-aos-delay="600">♥</i>
+                    <h3 data-aos="fade-up" data-aos-delay="700">Compromisso</h3>
+                    <p data-aos="fade-up" data-aos-delay="800">Cumprimos o que prometemos, respeitando prazos e oferecendo soluções reais para os problemas de nossos clientes.</p>
                 </div>
-                <div class="valor-card">
-                    <i>✓</i>
-                    <h3>Transparência</h3>
-                    <p>Trabalhamos com clareza em todos os processos, desde o diagnóstico até o orçamento final, sem surpresas desagradáveis.</p>
+                <div class="valor-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="300">
+                    <i data-aos="zoom-in" data-aos-delay="600">✓</i>
+                    <h3 data-aos="fade-up" data-aos-delay="700">Transparência</h3>
+                    <p data-aos="fade-up" data-aos-delay="800">Trabalhamos com clareza em todos os processos, desde o diagnóstico até o orçamento final, sem surpresas desagradáveis.</p>
                 </div>
-                <div class="valor-card">
-                    <i>↻</i>
-                    <h3>Inovação</h3>
-                    <p>Estamos sempre atualizados com as últimas tecnologias e métodos para oferecer serviços modernos e eficientes.</p>
+                <div class="valor-card" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="400">
+                    <i data-aos="zoom-in" data-aos-delay="600">↻</i>
+                    <h3 data-aos="fade-up" data-aos-delay="700">Inovação</h3>
+                    <p data-aos="fade-up" data-aos-delay="800">Estamos sempre atualizados com as últimas tecnologias e métodos para oferecer serviços modernos e eficientes.</p>
                 </div>
-                <div class="valor-card">
-                    <i>⚙</i>
-                    <h3>Qualidade</h3>
-                    <p>Utilizamos apenas peças e componentes de alta qualidade, garantindo durabilidade e confiabilidade em nossos reparos.</p>
+                <div class="valor-card" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="500">
+                    <i data-aos="zoom-in" data-aos-delay="600">⚙</i>
+                    <h3 data-aos="fade-up" data-aos-delay="700">Qualidade</h3>
+                    <p data-aos="fade-up" data-aos-delay="800">Utilizamos apenas peças e componentes de alta qualidade, garantindo durabilidade e confiabilidade em nossos reparos.</p>
                 </div>
-                <div class="valor-card">
-                    <i>♺</i>
-                    <h3>Sustentabilidade</h3>
-                    <p>Nos preocupamos com o meio ambiente, descartando corretamente resíduos eletrônicos e promovendo a reutilização de componentes.</p>
+                <div class="valor-card" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="600">
+                    <i data-aos="zoom-in" data-aos-delay="600">♺</i>
+                    <h3 data-aos="fade-up" data-aos-delay="700">Sustentabilidade</h3>
+                    <p data-aos="fade-up" data-aos-delay="800">Nos preocupamos com o meio ambiente, descartando corretamente resíduos eletrônicos e promovendo a reutilização de componentes.</p>
                 </div>
             </div>
         </div>
@@ -307,34 +65,31 @@
     <section class="equipe">
         <div class="equipe-container">
             <div class="equipe-titulo">
-                <h2 class="teste1">NOSSA EQUIPE</h2>
+                <h2 data-aos="fade-down" data-aos-duration="1000">NOSSA EQUIPE</h2>
             </div>
             <div class="equipe-membros">
-                <div class="membro">
-                    <img src="/api/placeholder/200/200" alt="Membro da equipe">
-                    <h3>Carlos Silva</h3>
-                    <p>Diretor Técnico</p>
+                <div class="membro" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="100">
+                    <img src="/assets/man1.png" alt="Membro da equipe" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1200">
+                    <h3 data-aos="fade-up" data-aos-delay="500">Carlos Silva</h3>
+                    <p data-aos="fade-up" data-aos-delay="600">Diretor Técnico</p>
                 </div>
-                <div class="membro">
-                    <img src="/api/placeholder/200/200" alt="Membro da equipe">
-                    <h3>Ana Oliveira</h3>
-                    <p>Especialista Apple</p>
+                <div class="membro" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="/assets/woman1.png" alt="Membro da equipe" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1200">
+                    <h3 data-aos="fade-up" data-aos-delay="500">Ana Oliveira</h3>
+                    <p data-aos="fade-up" data-aos-delay="600">Especialista Apple</p>
                 </div>
-                <div class="membro">
-                    <img src="/api/placeholder/200/200" alt="Membro da equipe">
-                    <h3>Ricardo Santos</h3>
-                    <p>Gerente de Atendimento</p>
+                <div class="membro" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="300">
+                    <img src="/assets/man2.png" alt="Membro da equipe" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1200">
+                    <h3 data-aos="fade-up" data-aos-delay="500">Ricardo Santos</h3>
+                    <p data-aos="fade-up" data-aos-delay="600">Gerente de Atendimento</p>
                 </div>
-                <div class="membro">
-                    <img src="/api/placeholder/200/200" alt="Membro da equipe">
-                    <h3>Juliana Costa</h3>
-                    <p>Técnica em Recuperação de Dados</p>
+                <div class="membro" data-aos="zoom-in-up" data-aos-duration="1000" data-aos-delay="400">
+                    <img src="/assets/woman2.png" alt="Membro da equipe" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1200">
+                    <h3 data-aos="fade-up" data-aos-delay="500">Juliana Costa</h3>
+                    <p data-aos="fade-up" data-aos-delay="600">Técnica em Recuperação de Dados</p>
                 </div>
             </div>
         </div>
     </section>
-  
     <%- include ('partials/footer.ejs') %>
-
 </body>
-</html>

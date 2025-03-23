@@ -18,7 +18,7 @@ app.get("/sobre?", (req,res) => {
 
 
 app.get("/atendimento?", (req,res) => {
-    res.send("oi")
+    res.render("service")
 })
 
 
