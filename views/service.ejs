@@ -1,33 +1,31 @@
 
     <%- include ('partials/header.ejs') %>
-
-
+<body>
     <%- include ('partials/navbar.ejs') %>
 
-    <body>
     <section class="form-section">
         <div class="container">
             <h2 class="section-title">Solicitar Orçamento</h2>
             <div class="form-container">
-                <form id="orcamento-form" method="POST" action="/atendimento">
+                <form id="orcamento-form">
                     <div class="form-group">
                         <label for="nome">Nome Completo *</label>
-                        <input type="text" class="form-control" id="nome" required name="nomeCliente">
+                        <input type="text" class="form-control" id="nome" required>
                     </div>
 
                     <div class="form-group">
                         <label for="email">E-mail *</label>
-                        <input type="email" class="form-control" id="email" required name="emailCliente">
+                        <input type="email" class="form-control" id="email" required>
                     </div>
 
                     <div class="form-group">
                         <label for="telefone">Telefone *</label>
-                        <input type="tel" class="form-control" id="telefone" required name="telefoneCliente">
+                        <input type="tel" class="form-control" id="telefone" required>
                     </div>
 
                     <div class="form-group">
                         <label for="dispositivo">Dispositivo *</label>
-                        <select class="form-control" id="dispositivo" required name="dispositivo">
+                        <select class="form-control" id="dispositivo" required>
                             <option value="">Selecione</option>
                             <option value="smartphone">Smartphone</option>
                             <option value="tablet">Tablet</option>
@@ -37,45 +35,45 @@
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label>Serviços Desejados *</label>
-                        <div class="checkbox-container">
-                            <label class="checkbox-item">
+                    <div class="form-group-unique">
+                        <label>Serviços Desejados <span class="asterisk">*</span></label>
+                        <div class="checkbox-container-unique">
+                            <label class="checkbox-item-unique">
                                 <input type="checkbox" id="tela" name="servicos[]" value="tela">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Reparo de Tela</span>
+                                <span class="checkmark-unique"></span>
+                                <span class="checkbox-label-unique">Reparo de Tela</span>
                             </label>
-                            <label class="checkbox-item">
+                            <label class="checkbox-item-unique">
                                 <input type="checkbox" id="bateria" name="servicos[]" value="bateria">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Troca de Bateria</span>
+                                <span class="checkmark-unique"></span>
+                                <span class="checkbox-label-unique">Troca de Bateria</span>
                             </label>
-                            <label class="checkbox-item">
+                            <label class="checkbox-item-unique">
                                 <input type="checkbox" id="pelicula" name="servicos[]" value="pelicula">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Troca de Película</span>
+                                <span class="checkmark-unique"></span>
+                                <span class="checkbox-label-unique">Troca de Película</span>
                             </label>
-                            <label class="checkbox-item">
+                            <label class="checkbox-item-unique">
                                 <input type="checkbox" id="software" name="servicos[]" value="software">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Problema de Software</span>
+                                <span class="checkmark-unique"></span>
+                                <span class="checkbox-label-unique">Problema de Software</span>
                             </label>
-                            <label class="checkbox-item">
+                            <label class="checkbox-item-unique">
                                 <input type="checkbox" id="outro" name="servicos[]" value="outro">
-                                <span class="checkmark"></span>
-                                <span class="checkbox-label">Outro Serviço</span>
+                                <span class="checkmark-unique"></span>
+                                <span class="checkbox-label-unique">Outro Serviço</span>
                             </label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="descricao">Descrição *</label>
-                        <textarea class="form-control" id="descricao" name="descricao" rows="4" required></textarea>
+                        <textarea class="form-control" id="descricao" rows="4" required></textarea>
                     </div>
 
-                    <button type="submit" class="btn">Solicitar Orçamento</button>
+                    <button type="submit" class="btn-unique">Solicitar Orçamento</button>
 
-                    <div class="form-footer">
+                    <div class="form-footer-unique">
                         <p>Você receberá seu orçamento em até 24h.</p>
                     </div>
                 </form>
@@ -85,3 +83,5 @@
     
 
     <%- include ('partials/footer.ejs') %>
+</body>
+</html>
