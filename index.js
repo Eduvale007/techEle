@@ -23,7 +23,7 @@ app.get("/atendimento?", (req,res) => {
 
 
 app.get("/contato?", (req,res) => {
-    res.send("oi")
+    res.render("contact")
 })
 
 
