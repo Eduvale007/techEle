@@ -1,31 +1,33 @@
 
     <%- include ('partials/header.ejs') %>
-<body>
+
+
     <%- include ('partials/navbar.ejs') %>
 
+    <body>
     <section class="form-section">
         <div class="container">
             <h2 class="section-title">Solicitar Orçamento</h2>
             <div class="form-container">
-                <form id="orcamento-form">
+                <form id="orcamento-form" method="POST" action="/atendimento">
                     <div class="form-group">
                         <label for="nome">Nome Completo *</label>
-                        <input type="text" class="form-control" id="nome" required>
+                        <input type="text" class="form-control" id="nome" required name="nomeCliente">
                     </div>
 
                     <div class="form-group">
                         <label for="email">E-mail *</label>
-                        <input type="email" class="form-control" id="email" required>
+                        <input type="email" class="form-control" id="email" required name="emailCliente">
                     </div>
 
                     <div class="form-group">
                         <label for="telefone">Telefone *</label>
-                        <input type="tel" class="form-control" id="telefone" required>
+                        <input type="tel" class="form-control" id="telefone" required name="telefoneCliente">
                     </div>
 
                     <div class="form-group">
                         <label for="dispositivo">Dispositivo *</label>
-                        <select class="form-control" id="dispositivo" required>
+                        <select class="form-control" id="dispositivo" required name="dispositivo">
                             <option value="">Selecione</option>
                             <option value="smartphone">Smartphone</option>
                             <option value="tablet">Tablet</option>
@@ -68,7 +70,7 @@
 
                     <div class="form-group">
                         <label for="descricao">Descrição *</label>
-                        <textarea class="form-control" id="descricao" rows="4" required></textarea>
+                        <textarea class="form-control" id="descricao" name="descricao" rows="4" required></textarea>
                     </div>
 
                     <button type="submit" class="btn">Solicitar Orçamento</button>
@@ -80,7 +82,6 @@
             </div>
         </div>
     </section>
+    
 
     <%- include ('partials/footer.ejs') %>
-</body>
-</html>
