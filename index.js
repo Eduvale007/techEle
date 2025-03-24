@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const connection = require("./database/database");
-const Cliente = require("./database/Cliente")
+const cliente = require("./database/Cliente")
 
 app.use(express.static("public"));
 
@@ -31,18 +31,42 @@ app.get("/atendimento", (req,res) => {
     res.render("service")
 })
 
+app.post("/atendimento", async (req, res) => {
+    try {
+        const { nomeCliente, emailCliente, telefoneCliente, dispositivo, servicos, descricao } = req.body;
 
-app.get("/contato?", (req,res) => {
-    res.send("oi")
-})
+        console.log("Nome:", nomeCliente);
+        console.log("Email:", emailCliente);
+        console.log("Telefone:", telefoneCliente);
+        console.log("Dispositivo:", dispositivo);
+        console.log("Serviços:", servicos);
+        console.log("Descrição:", descricao);
 
+        // Criando o registro no banco de dados com Sequelize
+        const novoCliente = await Cliente.create({
+            nomeCliente,
+            emailCliente,
+            telefoneCliente,
+            dispositivo,
+            servicos,
+            descricao
+        });
 
+        return res.status(201).json({ message: "Atendimento registrado com sucesso!", data: novoCliente });
 
-app.listen(8181, (erro) => {
-    if(erro){
-        console.log("Erro no servidor")
+    } catch (error) {
+        console.error("Erro ao registrar atendimento:", error);
+        return res.status(500).json({ message: "Erro interno no servidor", error: error.message });
     }
-    else{
-        console.log("Servidor rodando na porta 8181")
-    }
-})
+});
+
+
+app.get("/contato", (req, res) => {
+  res.send("oi");
+});
+
+
+const PORT = 8181;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
+});
