@@ -143,8 +143,9 @@ max-width: 100%;
 
 .hero-content {
     display: flex;
+    justify-content: center;
+    gap: 60px;
     align-items: center;
-    justify-content: space-between;
 }
 
 .hero-text {
@@ -336,8 +337,9 @@ max-width: 100%;
 
 .pickup-content {
     display: flex;
+    justify-content: center;
+    gap: 50px;
     align-items: center;
-    justify-content: space-between;
 }
 
 .pickup-text {
