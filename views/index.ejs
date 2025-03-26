@@ -87,7 +87,7 @@
         <section class="pickup-service">
             <div class="container pickup-content">
                 <div class="pickup-text" data-aos="fade-right" data-aos-duration="800">
-                    <h2>ESTÁ SEM TEMPO PARA<br>LEVAR SEU APARELHO<br>PARA O REPARO?</h2>
+                    <h2 class="sign-i">ESTÁ SEM TEMPO PARA<br>LEVAR SEU APARELHO<br>PARA O REPARO?</h2>
                     <p>Oferecemos serviço de retirada e entrega. Buscamos seu dispositivo em casa ou no trabalho!</p>
                     <a href="#contato" class="btn">AGENDAR UM ORÇAMENTO</a>
                 </div>
@@ -203,7 +203,25 @@
             </div>
         </section>
     <script>
-        
+        document.querySelectorAll('.faq-button').forEach(button => {
+    const answer = button.nextElementSibling; // Seleciona a resposta associada
+
+    // Garante que todas as respostas comecem ocultas
+    answer.style.display = 'none';
+
+    button.addEventListener('click', () => {
+        const isOpen = answer.style.display === 'block';
+
+        // Fecha todas as respostas antes de abrir a clicada (se desejar comportamento de acordeão)
+        document.querySelectorAll('.faq-answer').forEach(ans => ans.style.display = 'none');
+        document.querySelectorAll('.faq-button span:last-child').forEach(span => span.textContent = '+');
+
+        // Alterna visibilidade apenas da resposta clicada
+        answer.style.display = isOpen ? 'none' : 'block';
+        button.querySelector('span:last-child').textContent = isOpen ? '+' : '-';
+    });
+});
+
     </script>
         <!-- Footer -->
         <%- include ('partials/footer.ejs') %>

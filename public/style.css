@@ -2,7 +2,7 @@
     --primary-color: #1a3e8c;
     --secondary-color: #0d1d3f;
     --accent-color: #3498db;
-    --text-light: #ffffff;
+    --text-light: rgb(255, 255, 255);
     --text-dark: #333333;
     --section-padding: 60px 0;
 }
@@ -12,11 +12,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 100%;
 }
 
 body {
     background-color: #f5f5f5;
     color: var(--text-dark);
+
+}
+html, body {
     overflow-x: hidden;
 }
 
@@ -32,6 +36,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+max-width: 100%;
+
 }
 
 .logo {
@@ -65,7 +72,52 @@ body {
 .nav-menu a:hover {
     color: #7fc8ff;
 }
+.nav-menu li {
+    display: inline-block; /* Garante que o <li> não quebre a linha */
+    position: relative; /* Define um contexto para o ::after */
+}
 
+.nav-menu li a {
+    text-decoration: none;
+    color: var(--text-light);
+    padding: 0px 2px;
+    font-size: 13px;
+    display: inline-block; /* Impede que o ::after se comporte de forma errada */
+    position: relative; /* Necessário para que ::after funcione corretamente */
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-menu li a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+
+    background-color: #3498db;
+    position: absolute;
+    left: 0;
+    bottom: -4px; /* Afasta a linha um pouco do texto */
+    transition: width 0.5s ease-in-out;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-icon {
+    cursor:pointer;
+    display:none;
+}
+.mobile-menu-icon div {
+    width: 32px;
+    height: 2px;
+    background-color: #fff;
+    margin: 8px;
+    border-radius: 3px;
+}
+.mobile-menu {
+    display: none;
+}
 .contact-info {
     color: var(--text-light);
     display: flex;
@@ -159,7 +211,7 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 .btn.btn-outline {
-    background-color: none;
+    background: none;
 }
 
 .btn-outline {
@@ -534,25 +586,87 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
+    body {
+        overflow-x: hidden;
+    }
     .hero-content, .about-content, .pickup-content {
         flex-direction: column;
         text-align: center;
     }
-    
+    .sign-i::after {
+        display:flex;
+        justify-self: center;
+    }
     .hero-text, .about-text, .pickup-text {
         max-width: 100%;
         margin-bottom: 30px;
         padding-right: 0;
     }
-    
     .about-image {
         order: -1;
         margin-bottom: 30px;
     }
-    
     .nav-menu {
-        display: none;
+        position: fixed;
+        top: 0;
+        right: -50vw;
+        width: 50vw;
+        height: 100vh;
+        background: rgba(14, 30, 64, 0.75);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 10px;
+        transition: right 0.3s ease-out;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
+
+    
+
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    
+    .nav-menu li {
+        margin-left: 0;
+        opacity: 0;
+    }
+    
+    .mobile-menu-icon {
+        display: block;
+        z-index: 100;
+    }
+    .mobile-menu-icon button {
+        background: transparent;
+        border: none;
+        cursor:pointer;
+    }
+    @keyframes navLinkFade {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      .mobile-menu.active .line1 {
+        transform: rotate(-45deg) translate(-8px, 8px);
+      }
+      
+      .mobile-menu.active .line2 {
+        opacity: 0;
+      }
+      
+      .mobile-menu.active .line3 {
+        transform: rotate(45deg) translate(-5px, -7px);
+      }
 }
 
 @media (max-width: 768px) {
@@ -571,6 +685,9 @@ footer {
     color: white;
     padding: 50px 0;
     text-align: center;
+    width: 100%;
+max-width: 100vw;
+
 }
 
 .sobre-nos-principal {
@@ -615,13 +732,24 @@ h2 {
 h2:after {
     content: '';
     display: flex;
+    width: 60px;
+    height: 3px;
+    border-radius: 20px;
+    background-color: #2883c5;
+}
+.team-sign::after {
+    display: flex;
+    justify-self: center;
+}
+.section-title::after {
+    content: '';
+    display: flex;
     justify-self: center;
     width: 60px;
     height: 3px;
     border-radius: 20px;
     background-color: #2883c5;
 }
-
 p {
     line-height: 1.6;
     margin-bottom: 15px;
@@ -660,13 +788,12 @@ p {
     margin-bottom: 40px;
 }
 
-.valores-titulo h2 {
+.valores-titulo {
     display: inline-block;
 }
 
-.valores-titulo h2:after {
+.valores-titulo:after {
     left: 50%;
-    transform: translateX(-50%);
 }
 
 .valores-cards {
@@ -717,7 +844,7 @@ p {
 
 .equipe-titulo h2:after {
     left: 50%;
-    transform: translateX(-50%);
+
 }
 
 .equipe-membros {
@@ -739,6 +866,7 @@ p {
     object-fit: cover;
     margin-bottom: 15px;
     border: 3px solid #2883c5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .membro h3 {
@@ -757,8 +885,39 @@ p {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
-}
+    width: 100%;
+max-width: 100vw;
 
+}
+/* Ajustes gerais para telas menores */
+@media (max-width: 768px) {
+    .sobre-nos-principal {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-nos-texto {
+        padding: 0;
+    }
+    .sobre-nos-imagem img {
+        margin-top: 25px;
+    }
+    .valores-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .equipe-membros {
+        flex-direction: column;
+    }
+
+    .membro {
+        max-width: 100%;
+    }
+    .hs-sign::after {
+        justify-self: center;
+    }
+}
 header {
     background-color: var(--primary-color);
     padding: 15px 0;
@@ -779,19 +938,19 @@ header {
     color: #7fc8ff;
 }
 
-.section-title-unique {
+.section-title.service {
     text-align: center;
     margin-bottom: 30px;
     font-size: 28px;
     color: var(--primary-color);
     position: relative;
     padding-bottom: 10px;
+    margin-top: 120px;
 }
 
 .section-title:after {
     content: '';
   display: flex;
-    transform: translateX(-50%);
     width: 80px;
     height: 3px;
     background-color: var(--accent-color);
@@ -802,7 +961,7 @@ header {
     padding-bottom: 60px;
 }
 
-.form-container-unique {
+.form-container {
     background-color: white;
     border-radius: 8px;
     padding: 40px;
@@ -812,18 +971,18 @@ header {
     width: 100%;
 }
 
-.form-group-unique {
+.form-group {
     margin-bottom: 20px;
 }
 
-.form-group-unique label {
+.form-group label {
     display: block;
     font-weight: 600;
     color: var(--primary-color);
     margin-bottom: 5px;
 }
 
-.form-control-unique {
+.form-control {
     width: 100%;
     padding: 12px;
     font-size: 16px;
@@ -833,7 +992,7 @@ header {
     resize: none;
 }
 
-.form-control-unique:focus {
+.form-control:focus {
     border-color: var(--accent-color);
     outline: none;
 }
@@ -965,7 +1124,9 @@ header {
 .hero-contact p {
     font-size: 16px;
 }
-
+.hero.about-us {
+    margin-top: 20px
+}
 /* Contact Options */
 .contact-options {
     padding: 60px 0;
@@ -999,26 +1160,38 @@ header {
 .contact-card h3 {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #333;
+    color: var(--secondary-color);
 }
 
 .contact-card p {
     font-size: 14px;
-    color: #666;
+    color: var(--secondary-color);
     margin-bottom: 20px;
 }
 
 .btn-contact {
     display: inline-block;
-    background-color: #4267b2;
+    background-color: var(--accent-color);
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.5);
 }
 
+.btn-contact:hover {
+    background-color: #1c65a0;
+}
+
+@media (max-width: 768px) {
+    .contact-options {
+        flex-direction: column;
+        justify-self: center;
+    }
+}
 @media (max-width: 768px) {
     .form-container {
         padding: 20px;
