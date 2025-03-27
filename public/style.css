@@ -251,7 +251,7 @@ max-width: 100%;
 .about-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .about-text {
@@ -357,7 +357,6 @@ max-width: 100%;
 }
 
 .pickup-image {
-    flex: 1;
     text-align: right;
 }
 
@@ -383,6 +382,7 @@ max-width: 100%;
     text-align: center;
     padding: 20px;
     flex: 1;
+    
     min-width: 200px;
 }
 
