@@ -1,3 +1,5 @@
+
+/*
 const Sequelize = require('sequelize')
 const connection = require('./database')
 
@@ -33,4 +35,4 @@ Cliente.sync({force: false}).then(() =>{
     console.log("Tabela criada")
 })
 
-module.exports = Cliente
+module.exports = Cliente*/

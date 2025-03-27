@@ -9,6 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
+/*
 connection
   .authenticate()
   .then(() => {
@@ -17,6 +18,8 @@ connection
   .catch((msgErro) => {
     console.log("Erro ao conectar ao banco de dados:", msgErro);
   });
+
+  */
 
 
 app.get("/", (req, res) => {
@@ -30,6 +33,9 @@ app.get("/sobre", (req, res) => {
 app.get("/atendimento", (req,res) => {
     res.render("service")
 })
+
+
+/*
 
 app.post("/atendimento", async (req, res) => {
     try {
@@ -60,6 +66,7 @@ app.post("/atendimento", async (req, res) => {
     }
 });
 
+*/
 
 app.get("/contato", (req, res) => {
   res.render("contact");
