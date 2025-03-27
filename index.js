@@ -1,8 +1,9 @@
 const express = require("express");
 const app = express();
+/*
 const connection = require("./database/database");
 const cliente = require("./database/Cliente")
-
+*/
 app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true }));
